@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueJS</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" name="" id="" v-on:blur="getName('Meu nome é ', $event)">
+        <p v-text="name"></p>
+    </div>
+</body>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                name: ""
+            },
+            methods: {
+                getName: function(text, event) {
+                    this.name = text + event.target.value;
+                }
+            }
+        });
+    </script>
+</html>

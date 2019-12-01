@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora</title>
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Informe dois números para calcular o seu total</h1>
+                <form action="" class="form-inline">
+                    <input type="text" class="form-control" v-model.number="numberA" @focus="selectAll">
+                    <span class="label">+</span>
+                    <input type="text" class="form-control" v-model.number="numberB" @focus="selectAll">
+                </form>
+                <h2>Resultado: {{ numberA }} + {{ numberB }} = {{ numberC }}</h2>
+            
+                <pre class="bg-info text-white mt-4">{{ $data }}</pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '.container',
+            data: {
+               numberA: 0,
+               numberB: 0,
+            },
+            methods: {
+                selectAll: function(evt) {
+                    evt.target.select();
+                }
+            },
+            computed: {
+                numberC: function () {
+                    // this aponta para instância Vue
+                    return this.numberA + this.numberB;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

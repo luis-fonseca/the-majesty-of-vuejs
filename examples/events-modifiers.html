@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueJS</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p v-on:click="onClick('p', $event)">Clicar no parágrafo
+            <button v-on:click.stop="onClick('button', $event)">Clicar</button>
+        </p>
+        <form action="events-modifiers.html" method="get">
+            <input type="submit" value="Enviar sem modificador" v-on:click="onSubmit">
+            <input type="submit" value="Enviar com modificador" v-on:click.prevent="onSubmit">
+        </form>
+    </div>
+</body>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+    
+            },
+            methods: {
+                onClick: function(element, event) {
+                    // event.stopPropagation(); // parar a propagação evento
+                    console.log('Elemento clicado: ' + element);
+                },
+                onSubmit: function() {
+                    console.log("Formulário enviado.");
+                }
+            }
+        });
+    </script>
+</html>

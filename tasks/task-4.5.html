@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col">
+                <h1>Este sou eu!</h1>
+                <ul class="list-group">
+                    <li v-for="(value, key, index) in me" class="list-group-item">
+                        {{ index }}: {{ key }} = {{ value }}
+                    </li>
+                </ul>
+                <pre class="bg-info text-white mt-5">{{$data}}</pre>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '.container',
+            data: {
+                me: {
+                    name: "Luís Fonseca",
+                    weight: 107.5,
+                    height: 172,
+                    eyeColor: "brown",
+                    favoriteFood: "pasta",
+                }
+            },
+        })
+    </script>
+</body>
+</html>

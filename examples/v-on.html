@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col">
+                <button v-on:click="upvotes++" class="btn btn-primary btn-block">Total de vezes clicado: {{ upvotes }}</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '.container',
+            data: {
+               upvotes: 0,
+            }
+        })
+    </script>
+</body>
+</html>

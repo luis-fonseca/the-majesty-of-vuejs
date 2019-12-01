@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col">
+                <ul class="list-group">
+                    <li class="list-group-item" v-for="i in 11">
+                        {{ i - 1 }} times 4 is equal a {{ (i - 1) * 4 }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '.container',
+            data: {
+               
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueJS</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>Meu nome é {{ name }}</p>
+        <p>Meu nome é <span v-text="name"></span></p>
+        <!-- Não é possível utilizar a interpolação de strings diretamente no atributo -->
+        <!-- uam diretiva sempre espera uma expressão -->
+        <p>Para acessar o curso clique <a v-bind:href="docs" v-bind:target="target">aqui</a>. (atributo)</p>
+        <p>Para acessar o curso clique <a v-bind:href="getDocs()" v-bind:target="target">aqui</a>. (método)</p>
+        <br>
+        
+        <p>Para acessar o curso clique <a v-bind:href="browser.docs" v-bind:target="browser.target">aqui</a>. (atributo)</p>
+        <p>Para acessar o curso clique <a v-bind:href="getDocs()" v-bind:target="target">aqui</a>. (método)</p>
+    </div>
+</body>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                name: "Luís Fonseca",
+                docs: "https://vuejs.org/v2/guide/",
+                target: "_blank",
+                browser: {
+                    docs: "https://vuejs.org/v2/guide/",
+                    target: "_blank"
+                }
+            },
+            methods: {
+                getDocs: function () {
+                    return this.docs;
+                }
+            }
+        });
+    </script>
+</html>

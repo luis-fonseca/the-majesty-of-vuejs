@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueJS</title>
+    <script src="../vue.js"></script>
+
+    <style>
+        .block {
+            background-color: blanchedalmond;
+            width: 300px; height: 300px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- não é preciso especificar os parenteses () -->
+        <button v-on:click="increment(1, $event)">Incrementar</button>
+        <p>Total: {{ sum }}</p>
+
+        <button v-on:click="increment(2, $event)">Incrementar em 2</button>
+        <p>Total: {{ sum }}</p>
+
+        <div class="block" v-on:mousemove="updateCoordinate"></div>
+        <p>
+            Coordenada x: <span v-text="xc"></span> <br> 
+            Coordenada y: <span v-text="yc"></span>
+        </p>
+    </div>
+</body>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                sum: 0,
+                xc: 0,
+                yc: 0
+            },
+            methods: {
+                increment: function (n, event) {
+                    console.log(event);
+                    return this.sum += n;
+                },
+                updateCoordinate: function (event) {
+                    this.xc = event.clientX;
+                    this.yc = event.clientY;
+                }
+            }
+        });
+    </script>
+</html>

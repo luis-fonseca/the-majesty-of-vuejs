@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col">
+                <ul class="list-group">
+                    <li class="list-group-item" v-for="(story, index) in stories">
+                        {{ index }} - {{ story.writer }} said {{ story.plot }}
+                    </li>
+                </ul>
+
+                <hr>
+                <pre class="bg-info text-white"><code>{{ $data }}</code></pre>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/vue.js"></script>
+    <script>
+        let stories = [
+            {
+                plot: "I crashed my car today!",
+                writer: "Alex"
+            },
+            {
+                plot: "Yesterday, someone stole my bag!",
+                writer: "John"
+            },
+            {
+                plot: "Someone ate my chocolate...",
+                writer: "John"
+            },
+            {
+                plot: "I ate someone's chocolate!",
+                writer: "Alex"
+            },
+        ]
+        
+        new Vue({
+            el: '.container',
+            data: {
+               stories: stories,
+            }
+        })
+    </script>
+</body>
+</html>

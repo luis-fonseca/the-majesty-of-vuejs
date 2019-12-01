@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueJS</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>Meu nome é {{ name }}</p>
+        <p>Meu nome é {{ getInstructor() }}</p>
+        <p>O estudante é {{ getStudent() }}</p>
+    </div>
+</body>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                name: "Luís Fonseca",
+                student: "Luís Fonseca"
+            },
+            methods: {
+                getInstructor: function() {
+                    // this, no vue, serve como um proxy, então
+                    // não é necessário especificar this.data.propriedade
+                    return this.name;
+                },
+                getStudent: function () {
+                    return this.student;
+                }
+            }
+        });
+    </script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueJS</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p v-once>Meu nome inteiro é <span v-text="name"></span></p>
+        <p>Meu nome abreviado é <span v-text="getName()"></span></p>
+    </div>
+</body>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                name: "Luís Fonseca"
+            },
+            methods: {
+                getName: function() {
+                    this.name = "Luís F.";
+                    return this.name;
+                }
+            }
+        });
+    </script>
+</html>

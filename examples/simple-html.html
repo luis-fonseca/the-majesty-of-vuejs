@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueJS</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- por padrão, o vue não interpreta o HTML, é necessário usar a diretiva v-html -->
+        <!-- é um recurso somente utilizado em conteúdo que se confia -->
+        <!-- não é possível utilizar diretivas ou comandos do vuejs -->
+        <p>Exibição de HTML simples: {{ course }} </p>
+        <p>Exibição de HTML simples: <span v-html="course"></span> </p>
+    </div>
+</body>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                course: "Curso de <span style='color: red'>Vuejs</span>"
+            },
+            methods: {
+    
+            }
+        });
+    </script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello</title>
+</head>
+<body>
+    <div id="app">
+        <!-- {{ }} são chamadas de bind expression e é um código JS  -->
+        <h1>{{ message }}</h1>
+        <p><input type="text" v-model="message"></p><button v-on:click="reset">Reiniciar</button>
+        <!-- É possível realizar cálculos dentro de uma bind expression -->
+        <!-- <p>O total de 2 + 5 = {{ 2 + 5 }}</p> -->
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        let data = {
+            original: "Greetings your Majesty!",
+            message: ""
+        }
+        new Vue({
+            el: "#app",
+            data: data,
+            methods: {
+                reset: function () {
+                    this.message = this.original;
+                }
+            },
+            mounted: function () {
+                this.reset();
+            }
+        })
+    </script>
+</body>
+</html>
